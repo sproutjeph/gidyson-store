@@ -1,10 +1,4 @@
-import React, { useEffect } from "react";
-import { useRouter } from "next/router";
-import { PlusIcon } from "@heroicons/react/24/solid";
-import { HomeIcon } from "@heroicons/react/24/outline";
 const Footer = () => {
-  const router = useRouter();
-
   return (
     <footer className="h-36 bg-[#222] py-4 px-4 text-xs capitalize tracking-wider text-white">
       <div className="flex items-center justify-center gap-14 ">
