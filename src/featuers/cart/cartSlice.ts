@@ -19,7 +19,7 @@ const cartSlice = createSlice({
   reducers: {
     addToCart: (
       cartState,
-      { payload }: PayloadAction<{ cartItem: IProduct; qty: number }>
+      { payload }: PayloadAction<{ cartItem: IProduct }>
     ) => {
       const existingCartItem = cartState.cartItems.find(
         (item) => item.id === payload.cartItem.id
@@ -31,7 +31,6 @@ const cartSlice = createSlice({
         ...cartState.cartItems,
         {
           ...payload.cartItem,
-          amount: payload.cartItem.amount + payload.qty,
         },
       ];
     },
