@@ -1,38 +1,36 @@
 import Image from "next/image";
+import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import { IProduct } from "../../utils/types";
 import { FaCartPlus, FaStar } from "react-icons/fa";
-import { addToCart, calculateTotals } from "../../featuers/cart/cartSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { addToCart, calculateTotals } from "../../featuers/cart/cartSlice";
+import { useRouter } from "next/router";
 interface IProps {
   product: IProduct;
 }
 const ProductItem = ({ product }: IProps) => {
-  const { cartItems } = useAppSelector((state) => state.cart);
+  const router = useRouter();
   const dispatch = useAppDispatch();
-  const MAX_RATING = 5;
+  const { cartItems } = useAppSelector((state) => state.cart);
 
-  const MIN_RATING = 1;
-
-  const [rating, setRating] = useState(
-    Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1) + MIN_RATING)
-  );
   useEffect(() => {
     dispatch(calculateTotals());
   }, [cartItems]);
   return (
-    <div className="px-4 mx-auto shadow-md cursor-pointer ">
+    <div className="px-4 mx-auto shadow-md ">
       <Image
         src={product.img}
-        width={1000}
-        height={1000}
+        width={750}
+        height={750}
         alt="product"
-        className="object-contain w-full"
+        className="object-contain w-full cursor-pointer"
+        onClick={() => router.push(`/product-details/${product.id}`)}
       />
       <hr />
-      <h4 className="my-3 text-sm">{product.title}</h4>
+      <h4 className="my-3 text-sm">{product.title.toUpperCase()}</h4>
       <div className="flex gap-1 mb-3">
-        {Array(rating)
+        {Array(product.rating)
           .fill(0)
           .map((_, i) => (
             <FaStar key={i} className="h-5 text-yellow-500" />
@@ -42,7 +40,10 @@ const ProductItem = ({ product }: IProps) => {
 
       <button
         className=" btn-primary"
-        onClick={() => dispatch(addToCart({ cartItem: product }))}
+        onClick={() => {
+          dispatch(addToCart({ cartItem: product }));
+          toast(`${product.title} added to cart`);
+        }}
       >
         ADD TO CART
       </button>

@@ -5,10 +5,9 @@ import { useAppDispatch } from "../store/hooks";
 import { Sidebar, Portal, Overlay, Banner, ProductFeeds } from "../components";
 import { calculateTotals } from "../featuers/cart/cartSlice";
 
-export default function GidysonStore({ products }: any) {
+export default function GidysonStore() {
   const dispatch = useAppDispatch();
   const { isSidebarOpen } = useAppSelector((state) => state.sidebar);
-  const { totalCartItems } = useAppSelector((state) => state.cart);
 
   useEffect(() => {
     dispatch(calculateTotals());

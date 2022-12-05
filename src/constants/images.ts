@@ -14,7 +14,6 @@ import luckyplus from "../assets/images/lucky-plus.png";
 import power1 from "../assets/images/power1.jpg";
 import power2 from "../assets/images/power2.jpg";
 import power3 from "../assets/images/power3.jpg";
-import backDanger from "../assets/images/backlight.jpg";
 import battery from "../assets/images/battery.jpg";
 import Bearing from "../assets/images/Bearing.jpg";
 import bkshock from "../assets/images/bkshock.jpg";
@@ -35,7 +34,6 @@ import seat from "../assets/images/seat.jpg";
 
 export default {
   tricricle,
-  backDanger,
   bajaj3,
   battery,
   Bearing,

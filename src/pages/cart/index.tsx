@@ -21,7 +21,7 @@ const CartPage = () => {
           ))}
         </ul>
 
-        <div className="p-4 bg-white border-2 border-white rounded-md shadow-md h-fit">
+        <div className="p-4 bg-white border-2 border-white rounded-md shadow-sm h-fit">
           <div className="p-4 text-lg ">
             <div className="flex justify-between mb-3">
               <h2 className="">Subtotal</h2>

@@ -21,8 +21,8 @@ const Banner = () => {
           <div className="w-80 mx-auto">
             <Image
               src={carouselImage1}
-              width={1000}
-              height={1000}
+              width={700}
+              height={700}
               className="object-contain w-full"
               alt="Honda photo"
               loading="lazy"
