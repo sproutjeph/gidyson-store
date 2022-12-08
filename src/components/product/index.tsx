@@ -18,26 +18,32 @@ const ProductItem = ({ product }: IProps) => {
     dispatch(calculateTotals());
   }, [cartItems]);
   return (
-    <div className="px-4 mx-auto shadow-md ">
-      <Image
-        src={product.img}
-        width={750}
-        height={750}
-        alt="product"
-        className="object-contain w-full cursor-pointer"
-        onClick={() => router.push(`/product-details/${product.id}`)}
-      />
-      <hr />
-      <h4 className="my-3 text-sm">{product.title.toUpperCase()}</h4>
-      <div className="flex gap-1 mb-3">
-        {Array(product.rating)
-          .fill(0)
-          .map((_, i) => (
-            <FaStar key={i} className="h-5 text-yellow-500" />
-          ))}
+    <div className="px-4 mx-auto shadow-md w-full flex flex-col">
+      <div className=" flex-1">
+        <div className="">
+          <Image
+            src={product.img}
+            width={500}
+            height={500}
+            alt="product"
+            loading="lazy"
+            className="object-contain w-full h-full cursor-pointer"
+            onClick={() => router.push(`/product-details/${product.id}`)}
+          />
+        </div>
+        <hr />
+        <h4 className="my-3 text-sm">{product.title.toUpperCase()}</h4>
+        <div className="flex gap-1 mb-3">
+          {Array(product.rating)
+            .fill(0)
+            .map((_, i) => (
+              <FaStar key={i} className="h-5 text-yellow-500" />
+            ))}
+        </div>
+        <div className="mb-3 font-bold tracking-wider">
+          ₦ {product.price.toLocaleString()}
+        </div>
       </div>
-      <div className="mb-3 font-bold tracking-wider">₦ {product.price}</div>
-
       <button
         className=" btn-primary"
         onClick={() => {

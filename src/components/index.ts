@@ -1,11 +1,15 @@
 export { default as Navbar } from "./navbar";
 export { default as Footer } from "./footer";
+export { default as Portal } from "./portal";
 export { default as Layout } from "./layout";
-export { default as GidysonLogo } from "./gidysonLogo";
+export { default as Banner } from "./banner";
 export { default as Sidebar } from "./sidebar";
 export { default as Overlay } from "./overlay";
-export { default as Portal } from "./portal";
-export { default as Banner } from "./banner";
-export { default as ProductFeeds } from "./productFeeds";
-
 export { default as CartItem } from "./cartItem";
+export { default as LoadingIcon } from "./loadingIcon";
+export { default as GidysonLogo } from "./gidysonLogo";
+export { default as LoginForm } from "./auth/LoginForm";
+export { default as ProductFeeds } from "./productFeeds";
+export { default as RegisterForm } from "./auth/RegisterForm";
+export { default as ProductDetails } from "./productDetails";
+export { default as SmallProfile } from "./smallProfile";

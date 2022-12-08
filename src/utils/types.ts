@@ -43,3 +43,11 @@ export interface IUser {
   email: string;
   password: string;
 }
+
+export type IUserRegData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  password2: string;
+};

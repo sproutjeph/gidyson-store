@@ -21,8 +21,8 @@ const Banner = () => {
           <div className="w-80 mx-auto">
             <Image
               src={carouselImage1}
-              width={700}
-              height={700}
+              width={500}
+              height={500}
               className="object-contain w-full"
               alt="Honda photo"
               loading="lazy"
@@ -34,8 +34,8 @@ const Banner = () => {
           <div className="w-80 mx-auto">
             <Image
               src={carouselImage2}
-              width={1000}
-              height={1000}
+              width={500}
+              height={500}
               className="object-contain w-full"
               alt="Honda photo"
               loading="lazy"
@@ -46,8 +46,8 @@ const Banner = () => {
           <div className="w-80 mx-auto">
             <Image
               src={carouselImage3}
-              width={1000}
-              height={1000}
+              width={500}
+              height={500}
               className="object-contain w-full "
               alt="Honda photo"
               loading="lazy"

@@ -21,6 +21,7 @@ module.exports = {
         primary300: "#fcdcbc",
         primary200: "#fde8d2",
         primary100: "#fef3e9",
+        secondary: "#22c55e",
       },
     },
   },

@@ -25,7 +25,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/portal/index.js"
+    "src/components/portal/index.js",
+    "firebase.js",
+    "src/pages/api/auth/[...nextauth].ts"
   ],
   "exclude": ["node_modules"]
 }

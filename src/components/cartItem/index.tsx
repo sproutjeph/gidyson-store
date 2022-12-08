@@ -50,7 +50,7 @@ const CartItem = ({ item }: IProps) => {
           </h2>
         </div>
 
-        <div className="flex justify-between pt-4 border-t-2 md:col-span-2">
+        <div className="flex justify-between pt-4 border-t-2 md:col-span-2 border-dashed">
           <button
             className="px-3 py-1 rounded-md bg-primary300"
             onClick={() => {
