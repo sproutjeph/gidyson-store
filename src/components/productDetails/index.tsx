@@ -64,7 +64,7 @@ const ProductDetails = ({ id }: IProps) => {
                   <FaStar key={i} className="h-5 text-yellow-500" />
                 ))}
             </div>
-            <h4 className="text-lg">₦{product?.price}</h4>
+            <h4 className="text-lg">₦{product?.price.toLocaleString()}</h4>
           </div>
           <div className="my-4 capitalize">
             <div className="flex justify-between">

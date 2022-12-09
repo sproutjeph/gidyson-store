@@ -34,8 +34,6 @@ const LoginForm = ({ setIsLoading }: { setIsLoading: any }) => {
     } catch (error) {
       console.log(error);
       setIsLoading(false);
-    } finally {
-      setIsLoading(false);
     }
   }
   async function handleFacebookSignin() {

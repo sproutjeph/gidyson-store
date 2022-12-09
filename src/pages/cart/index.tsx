@@ -25,7 +25,9 @@ const CartPage = () => {
           <div className="p-4 text-lg ">
             <div className="flex justify-between mb-3">
               <h2 className="">Subtotal</h2>
-              <h2 className="text-green-500">₦ {totalPrice}</h2>
+              <h2 className="text-green-500">
+                ₦ {totalPrice.toLocaleString()}
+              </h2>
             </div>
 
             <div className="flex justify-between">
@@ -36,7 +38,7 @@ const CartPage = () => {
           </div>
           <div className="flex justify-between px-4 mb-3 text-xl text-black">
             <h1 className=""> Total :</h1>
-            <h1 className="">₦ {totalPrice}</h1>
+            <h1 className="">₦ {totalPrice.toLocaleString()}</h1>
           </div>
           <button
             className="mt-3 btn-primary"

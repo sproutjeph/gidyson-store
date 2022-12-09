@@ -46,7 +46,7 @@ const CartItem = ({ item }: IProps) => {
           </div>
 
           <h2 className="my-3 text-xl font-bold tracking-widest text-center">
-            Price : ₦{item.price}
+            Price : ₦{item.price.toLocaleString()}
           </h2>
         </div>
 
