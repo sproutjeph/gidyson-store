@@ -1,9 +1,7 @@
 import CredentialsProdvider from "next-auth/providers/credentials";
 import FacebookProvider from "next-auth/providers/facebook";
-import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import GoogleProvider from "next-auth/providers/google";
 import NextAuth, { NextAuthOptions } from "next-auth";
-import clientPromise from "../../../utils/monogodb";
 import User from "../../../models/UserModel";
 import db from "../../../utils/db";
 
@@ -59,14 +57,13 @@ const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/auth",
   },
-  adapter: MongoDBAdapter(clientPromise),
   session: {
     strategy: "jwt",
   },
   jwt: {
     secret: process.env.JWT_SECRET as string,
   },
-  secret: process.env.SECRET,
+  secret: process.env.NEXTAUTH_SECRET as string,
 };
 
 export default NextAuth(authOptions);

@@ -26,7 +26,9 @@ const Navbar = () => {
           <ul className="flex items-center gap-4">
             <FaBars
               className="text-xl cursor-pointer md:text-2xl"
-              onClick={() => dispatch(openSidebar())}
+              onClick={() => {
+                dispatch(openSidebar());
+              }}
             />
             <GidysonLogo />
           </ul>

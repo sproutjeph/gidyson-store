@@ -39,7 +39,10 @@ const LoginForm = ({ setIsLoading }: { setIsLoading: any }) => {
   async function handleFacebookSignin() {
     setIsLoading(true);
     try {
-      await signIn("facebook", { callbackUrl: "http://localhost:3000" });
+      await signIn("facebook", {
+        callbackUrl:
+          (process.env.NEXTAUTH_URL as string) || "http://localhost:3000",
+      });
     } catch (error) {
       setIsLoading(false);
       console.log(error);
