@@ -19,7 +19,7 @@ const Sidebar = () => {
   return (
     <>
       <aside
-        className={`shadow-md scrollbar-hide absolute top-0 z-30 h-screen w-[80vw] md:w-[30vw] transform overflow-y-scroll bg-white py-4 transition-all duration-300 ${
+        className={`shadow-md scrollbar-hide absolute top-0 z-50 h-screen w-[80vw] md:w-[30vw] transform overflow-y-scroll bg-white py-4 transition-all duration-300 ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-[101%]"
         }`}
       >

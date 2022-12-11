@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-// import { register, reset } from "../../featuers/auth/authSlice";
+import axios from "axios";
 import { toast } from "react-toastify";
 import { IUserRegData } from "../../utils/types";
+import React, { useEffect, useState } from "react";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const RegisterForm = ({ setIsLoading }: { setIsLoading: any }) => {
-  const dispatch = useAppDispatch();
-  // const { isLoading, isError, isSuccess, message, user } = useAppSelector(
-  //   (state) => state.auth
-  // );
-
+  const router = useRouter();
+  const { data, status } = useSession();
   const [userInput, setUserInput] = useState<IUserRegData>({
     firstName: "",
     lastName: "",
@@ -24,18 +22,7 @@ const RegisterForm = ({ setIsLoading }: { setIsLoading: any }) => {
     });
   };
 
-  // useEffect(() => {
-  //   if (isError) {
-  //     toast.error(`${message}`);
-  //   }
-
-  //   if (isSuccess || user) {
-  //     navigate("/dashboard");
-  //   }
-  //   dispatch(reset());
-  // }, [user, isError, message, navigate, isSuccess]);
-
-  const registerClickHandler = () => {
+  const registerClickHandler = async () => {
     if (
       userInput.firstName.trim().length === 0 ||
       userInput.lastName.trim().length === 0 ||
@@ -54,10 +41,31 @@ const RegisterForm = ({ setIsLoading }: { setIsLoading: any }) => {
         email: userInput.email,
         password: userInput.password,
       };
-      // dispatch(register(userData));
-      console.log(userData);
+
+      try {
+        await axios.post("/api/auth/signup", userData);
+        const result = await signIn("credentials", {
+          redirect: false,
+          email: userInput.email,
+          password: userInput.password,
+        });
+        if (result?.status) {
+          router.push("/");
+        }
+        if (result?.error) {
+          toast(result.error);
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
+
+  useEffect(() => {
+    if (data?.user) {
+      router.push("/");
+    }
+  }, [router, data]);
 
   return (
     <>
@@ -105,7 +113,10 @@ const RegisterForm = ({ setIsLoading }: { setIsLoading: any }) => {
           />
         </div>
         <div className="intro-x mt-5 xl:mt-8 text-center xl:text-left">
-          <button className="btn-primary" onClick={registerClickHandler}>
+          <button
+            className="btn-primary"
+            onClick={() => registerClickHandler()}
+          >
             Register
           </button>
         </div>

@@ -1,4 +1,6 @@
+import bcrypt from "bcryptjs";
 import { images } from "../constants";
+
 import {
   FaAirbnb,
   FaElementor,
@@ -228,3 +230,20 @@ const data: IData = {
   ],
 };
 export default data;
+
+export const users = [
+  {
+    firstName: "jeph",
+    lastName: "mbah",
+    email: "donjeph@gmail.com",
+    password: "123456",
+    isAdmin: true,
+  },
+  {
+    firstName: "chisom",
+    lastName: "you",
+    email: "donchison@gmail.com",
+    password: "123456",
+    isAdmin: false,
+  },
+];

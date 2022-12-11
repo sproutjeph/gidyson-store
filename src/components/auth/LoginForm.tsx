@@ -49,21 +49,21 @@ const LoginForm = ({ setIsLoading }: { setIsLoading: any }) => {
   return (
     <main className="">
       <button
-        className="px-4 w-full flex justify-around border-2 py-1 rounded-md mb-3 mt-4"
+        className="px-4 w-full flex justify-center gap-6 border-2 py-2 rounded-md mb-3 mt-4 bg-slate-800 text-white items-center"
         onClick={() => handleGoogleSignin()}
       >
         <span>Sign In With Google</span>
-        <FaGoogle className="text-3xl text-blue-500" />
+        <FaGoogle className="text-3xl text-red-500" />
       </button>
       <button
-        className="px-4 flex justify-around border-2 py-2 rounded-md mb-3 w-full"
+        className="px-4 flex justify-center gap-6 border-2 py-2 rounded-md mb-3 w-full bg-blue-600 text-white items-center"
         onClick={() => handleFacebookSignin()}
       >
         <span>Sing In with Facebook</span>
-        <FaFacebook className="text-3xl text-blue-500" />
+        <FaFacebook className="text-3xl text-white" />
       </button>
-      <h4 className="text-center text-xl">OR With Email </h4>
-      <div className="mt-4">
+      <h4 className="text-center text-sm">OR With Email </h4>
+      <div className="mt-2">
         <input
           type="email"
           className="form-control mb-4"

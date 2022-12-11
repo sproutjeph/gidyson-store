@@ -1,8 +1,6 @@
 const Overlay = () => {
   return (
-    <div className="fixed top-0 z-20 h-screen w-screen bg-[rgba(255,255,255,.7)]">
-      Overlay
-    </div>
+    <div className="fixed top-0 z-40 h-screen w-screen bg-[rgba(0,0,0,.7)]" />
   );
 };
 
