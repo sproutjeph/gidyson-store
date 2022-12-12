@@ -70,12 +70,12 @@ const RegisterForm = ({ setIsLoading }: { setIsLoading: any }) => {
   return (
     <>
       <div className="">
-        <div className="mt-4 grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 mt-4">
           <input
             type="text"
             value={userInput.firstName}
             name="firstName"
-            className="form-control py-3 px-4 block"
+            className="block px-4 py-2 rounded-md form-control"
             placeholder="First name"
             onChange={(e) => onChangeHandler(e)}
           />
@@ -83,7 +83,7 @@ const RegisterForm = ({ setIsLoading }: { setIsLoading: any }) => {
             type="text"
             value={userInput.lastName}
             name="lastName"
-            className=" form-control py-3 px-4 block"
+            className="block px-4 py-2 rounded-md form-control"
             placeholder="Last name"
             onChange={(e) => onChangeHandler(e)}
           />
@@ -91,7 +91,7 @@ const RegisterForm = ({ setIsLoading }: { setIsLoading: any }) => {
             type="email"
             value={userInput.email}
             name="email"
-            className="intro-x login__input form-control py-3 px-4 block col-span-2"
+            className="block col-span-2 px-4 py-2 rounded-md form-control"
             placeholder="Email"
             onChange={(e) => onChangeHandler(e)}
           />
@@ -99,7 +99,7 @@ const RegisterForm = ({ setIsLoading }: { setIsLoading: any }) => {
             type="password"
             value={userInput.password}
             name="password"
-            className="intro-x login__input form-control py-3 px-4 block col-span-2"
+            className="block col-span-2 px-4 py-2 rounded-md form-control"
             placeholder="Password"
             onChange={(e) => onChangeHandler(e)}
           />
@@ -107,12 +107,12 @@ const RegisterForm = ({ setIsLoading }: { setIsLoading: any }) => {
             type="password"
             value={userInput.password2}
             name="password2"
-            className="intro-x login__input form-control py-3 px-4 block col-span-2"
+            className="block col-span-2 px-4 py-2 rounded-md form-control"
             placeholder="Comfirme Password"
             onChange={(e) => onChangeHandler(e)}
           />
         </div>
-        <div className="intro-x mt-5 xl:mt-8 text-center xl:text-left">
+        <div className="mt-5 text-center intro-x xl:mt-8 xl:text-left">
           <button
             className="btn-primary"
             onClick={() => registerClickHandler()}

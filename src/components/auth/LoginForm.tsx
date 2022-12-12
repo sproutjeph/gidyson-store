@@ -30,7 +30,10 @@ const LoginForm = ({ setIsLoading }: { setIsLoading: any }) => {
   async function handleGoogleSignin() {
     setIsLoading(true);
     try {
-      await signIn("google", { callbackUrl: "http://localhost:3000" });
+      await signIn("google", {
+        callbackUrl:
+          (process.env.NEXTAUTH_URL as string) || "http://localhost:3000",
+      });
     } catch (error) {
       console.log(error);
       setIsLoading(false);
@@ -52,24 +55,24 @@ const LoginForm = ({ setIsLoading }: { setIsLoading: any }) => {
   return (
     <main className="">
       <button
-        className="px-4 w-full flex justify-center gap-6 border-2 py-2 rounded-md mb-3 mt-4 bg-slate-800 text-white items-center"
+        className="flex items-center justify-center w-full gap-6 px-4 py-2 mt-4 mb-3 text-white border-2 rounded-md bg-slate-800"
         onClick={() => handleGoogleSignin()}
       >
         <span>Sign In With Google</span>
         <FaGoogle className="text-3xl text-red-500" />
       </button>
       <button
-        className="px-4 flex justify-center gap-6 border-2 py-2 rounded-md mb-3 w-full bg-blue-600 text-white items-center"
+        className="flex items-center justify-center w-full gap-6 px-4 py-2 mb-3 text-white bg-blue-600 border-2 rounded-md"
         onClick={() => handleFacebookSignin()}
       >
         <span>Sing In with Facebook</span>
         <FaFacebook className="text-3xl text-white" />
       </button>
-      <h4 className="text-center text-sm">OR With Email </h4>
+      <h4 className="text-sm text-center">OR With Email </h4>
       <div className="mt-2">
         <input
           type="email"
-          className="form-control mb-4"
+          className="mb-4 rounded-md form-control"
           placeholder="email"
           value={email}
           onChange={(e) => {
@@ -79,7 +82,7 @@ const LoginForm = ({ setIsLoading }: { setIsLoading: any }) => {
         />
         <input
           type="password"
-          className="form-control"
+          className="rounded-md form-control"
           placeholder="Password"
           value={password}
           onChange={(e) => {
@@ -99,7 +102,7 @@ const LoginForm = ({ setIsLoading }: { setIsLoading: any }) => {
         </button>
       </div>
 
-      <div className="flex px-4 text-xs  text-slate-600">
+      <div className="flex px-4 text-xs text-slate-600">
         <button onClick={forgetPasswordHandler}>Forgot Password?</button>
       </div>
     </main>

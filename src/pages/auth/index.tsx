@@ -11,23 +11,23 @@ const AuthPage = () => {
   return (
     <>
       {isLoading && <LoadingIcon iconColor="white" />}
-      <div className="block xl:grid grid-cols-2 gap-x-4">
+      <div className="block grid-cols-2 xl:grid gap-x-4">
         {/* BEGIN: Login Info */}
-        <div className="hidden xl:flex flex-col min-h-screen">
+        <div className="flex-col hidden min-h-screen xl:flex">
           <div className="mt-20">
             <Image alt="" className="w-1/2 -mt-16" src={illustrationUrl} />
-            <div className="  font-medium text-4xl leading-tight mt-10">
+            <div className="mt-10 text-4xl font-medium leading-tight ">
               A few more clicks to <br />
               sign in to your account.
             </div>
-            <div className=" mt-5 text-lg  text-opacity-70 dark:text-slate-400">
+            <div className="mt-5 text-lg text-opacity-70 dark:text-slate-400">
               Manage your account.
             </div>
-            <div className="mt-3 text-md  text-opacity-70 dark:text-slate-400">
+            <div className="mt-3 text-md text-opacity-70 dark:text-slate-400">
               Dont have an account?{" "}
               <a
                 onClick={() => setHasAccount(!hasAccount)}
-                className="text-white text-lg cursor-pointer"
+                className="text-lg text-white cursor-pointer"
               >
                 Click here
               </a>
@@ -36,19 +36,19 @@ const AuthPage = () => {
         </div>
         {/* END: Login Info */}
         {/* BEGIN: Login Form */}
-        <div className="h-screen xl:h-auto flex mt-8">
-          <div className="mx-auto  bg-white  px-4 xl:p-0 rounded-md  w-full sm:w-3/4 lg:w-2/4 xl:w-auto">
-            <h2 className=" font-bold text-2xl xl:text-3xl text-center xl:text-left">
+        <div className="flex h-screen mt-8 xl:h-auto">
+          <div className="w-full px-4 mx-auto bg-white rounded-md xl:p-0 sm:w-3/4 lg:w-2/4 xl:w-auto">
+            <h2 className="mt-3 text-2xl font-bold text-center xl:text-3xl xl:text-left">
               {hasAccount ? "Sign In" : "Register"}
             </h2>
-            <div className=" mt-2 text-slate-500 xl:hidden text-center">
+            <div className="mt-2 text-center text-slate-500 xl:hidden">
               Sign in to your account. Manage your account.
             </div>
-            <div className=" mt-2 text-slate-500 xl:hidden text-center">
+            <div className="mt-2 text-center text-slate-500 xl:hidden">
               {hasAccount ? "Don't have account?" : "Have account"}{" "}
               <a
                 onClick={() => setHasAccount(!hasAccount)}
-                className="text-slate-600 cursor-pointer"
+                className="cursor-pointer text-slate-600"
               >
                 Click here
               </a>
@@ -59,9 +59,9 @@ const AuthPage = () => {
               <RegisterForm setIsLoading={setIsLoading} />
             )}
 
-            <div className=" mt-4 text-slate-600 text-center">
+            <div className="mt-4 text-center text-slate-600">
               <a
-                className="text-primary cursor-pointer"
+                className="cursor-pointer text-primary"
                 onClick={() => setHasAccount(!hasAccount)}
               >
                 {hasAccount ? "Don't have an account?" : "I have an account"}
