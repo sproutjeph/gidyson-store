@@ -1,7 +1,8 @@
+import { Footer, Navbar, Overlay, Portal, Sidebar } from "../../components";
+import { useAppSelector } from "../../store/hooks";
+import { PageMeta } from "../../utils/types";
 import React, { ReactNode } from "react";
 import Head from "next/head";
-import { PageMeta } from "../../utils/types";
-import { Footer, Navbar } from "../../components";
 
 interface Props {
   children: ReactNode;
@@ -14,6 +15,7 @@ const Layout = ({ children, meta: pageMeta }: Props) => {
     description: "Brought to you By Jephthah",
     ...pageMeta,
   };
+  const { isSidebarOpen } = useAppSelector((state) => state.sidebar);
 
   return (
     <>
@@ -26,6 +28,10 @@ const Layout = ({ children, meta: pageMeta }: Props) => {
       <main className="max-w-6xl mx-auto mb-10 mt-28">{children}</main>
 
       <Footer />
+      <Portal>
+        <Sidebar />
+        {isSidebarOpen ? <Overlay /> : null}
+      </Portal>
     </>
   );
 };

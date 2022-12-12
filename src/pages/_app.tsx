@@ -1,14 +1,13 @@
-import "../styles/main.css";
-import "../styles/Custom.css";
-
-import { Layout } from "../components";
-import { store } from "../store/store";
-import { Provider } from "react-redux";
-import type { AppProps } from "next/app";
-import { Roboto } from "@next/font/google";
-import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer } from "react-toastify";
 import { SessionProvider } from "next-auth/react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Roboto } from "@next/font/google";
+import type { AppProps } from "next/app";
+import { store } from "../store/store";
+import { Layout } from "../components";
+import { Provider } from "react-redux";
+import "../styles/Custom.css";
+import "../styles/main.css";
 
 const roboto = Roboto({
   subsets: ["latin"],

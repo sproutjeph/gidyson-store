@@ -1,14 +1,14 @@
-import Image from "next/image";
-import { useRouter } from "next/router";
-import { BsCart4 } from "react-icons/bs";
-import GidysonLogo from "../gidysonLogo";
-import { FaBars, FaSearch } from "react-icons/fa";
-import { useSession, signIn, signOut } from "next-auth/react";
 import { openSidebar } from "../../featuers/sidebar/sidebarSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-
-import { useState } from "react";
+import { FaBars, FaSearch } from "react-icons/fa";
+import { useSession } from "next-auth/react";
 import SmallProfile from "../smallProfile";
+import { BsCart4 } from "react-icons/bs";
+import GidysonLogo from "../gidysonLogo";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import Image from "next/image";
+
 const Navbar = () => {
   const router = useRouter();
   const { data, status } = useSession();
@@ -21,8 +21,8 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full shadow-sm fixed top-0 z-30 bg-white ">
-        <div className="flex items-center justify-between max-w-6xl p-4 mx-auto md:py-6 md:px-0 relative">
+      <nav className="fixed top-0 z-30 w-full bg-white shadow-sm ">
+        <div className="relative flex items-center justify-between max-w-6xl p-4 mx-auto md:py-6 md:px-0">
           <ul className="flex items-center gap-4">
             <FaBars
               className="text-xl cursor-pointer md:text-2xl"
@@ -35,25 +35,24 @@ const Navbar = () => {
           <div className="items-center flex-1 hidden gap-2 p-1 px-3 ml-10 border rounded-md md:flex ">
             <FaSearch className="text-xl cursor-pointer" />
             <input
-              type="text"
-              className="w-full border-none appearance-none outline-transparent"
+              type=""
+              className="w-full py-1 outline-none"
               placeholder="Search Products, Brands and Category"
-            ></input>
+            />
           </div>
           <button className="hidden px-3 py-2 ml-2 mr-10 tracking-wider text-white rounded-md md:block bg-primary900 hover:bg-primary800 text-md">
             Search
           </button>
           <ul className="flex items-center gap-5 ">
-            <FaSearch className="text-xl cursor-pointer md:hidden" />
             {status === "authenticated" ? (
               <div
                 onClick={() => setShowProfile(!showProfile)}
-                className="flex flex-shrink-0 cursor-pointer flex-col items-center"
+                className="flex flex-col items-center flex-shrink-0 cursor-pointer"
               >
                 <Image
                   width={100}
                   height={100}
-                  className="rounded-full w-10 h-10 object-contain"
+                  className="object-contain w-8 h-8 rounded-full"
                   src={data.user?.image as string}
                   alt="profile photo"
                 />
@@ -80,6 +79,17 @@ const Navbar = () => {
               </span>
             </div>
           </ul>
+        </div>
+        <div className="flex items-center gap-2 mx-[19px] border rounded-md md:hidden">
+          <input
+            type=""
+            className="w-full pl-4 outline-none"
+            placeholder="Search Products, Brands and Category"
+          />
+
+          <div className="h-full px-3 py-3 rounded-md bg-primary700">
+            <FaSearch className="text-xl cursor-pointer" />
+          </div>
         </div>
       </nav>
     </>

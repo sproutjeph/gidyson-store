@@ -16,10 +16,10 @@ export default function GidysonStore() {
       <Banner />
       <ProductFeeds />
 
-      <Portal>
+      {/* <Portal> 
         <Sidebar />
         {isSidebarOpen ? <Overlay /> : null}
-      </Portal>
+      </Portal> */}
     </div>
   );
 }
