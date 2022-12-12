@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 z-30 w-full bg-white shadow-sm ">
+      <nav className="fixed top-0 z-30 w-full bg-white shadow-sm">
         <div className="relative flex items-center justify-between max-w-6xl p-4 mx-auto md:py-6 md:px-0">
           <ul className="flex items-center gap-4">
             <FaBars

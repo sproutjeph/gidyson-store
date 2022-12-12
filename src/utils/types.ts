@@ -9,6 +9,8 @@ export interface PageMeta {
 export interface IAccount {
   icon: IconType;
   text: string;
+  id?: number;
+  active?: boolean;
 }
 
 export interface IProduct {

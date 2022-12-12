@@ -23,10 +23,10 @@ const Sidebar = () => {
           isSidebarOpen ? "translate-x-0" : "-translate-x-[101%]"
         }`}
       >
-        <div className="flex gap-2 pl-3 justify-between">
+        <div className="flex justify-between gap-2 pl-3">
           <GidysonLogo />
           <FaTimes
-            className="mr-4 text-2xl cursor-pointer text-red-300"
+            className="mr-4 text-2xl text-red-300 cursor-pointer"
             onClick={() => {
               dispatch(closeSidebar());
             }}
@@ -41,7 +41,12 @@ const Sidebar = () => {
         </Link>
         <hr className="my-4" />
         <div className="">
-          <Link href="/customer">
+          <Link
+            href="/customer"
+            onClick={() => {
+              dispatch(closeSidebar());
+            }}
+          >
             <div className="flex items-center justify-between gap-2 ml-4 uppercase cursor-pointer">
               <span className="text-mainColor">my gidyson account</span>
               <MdChevronRight className="mr-2 text-2xl" />
@@ -92,10 +97,20 @@ const Sidebar = () => {
           <Link href="/">
             <h4 className="cursor-pointer">Sell on Gidyson Trust Links</h4>
           </Link>
-          <Link href="/">
+          <Link
+            href="/contact"
+            onClick={() => {
+              dispatch(closeSidebar());
+            }}
+          >
             <h4 className="cursor-pointer">Contact us</h4>
           </Link>
-          <Link href="/">
+          <Link
+            href="/"
+            onClick={() => {
+              dispatch(closeSidebar());
+            }}
+          >
             <h4 className="cursor-pointer">Help Center</h4>
           </Link>
         </div>

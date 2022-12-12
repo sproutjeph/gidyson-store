@@ -9,6 +9,8 @@ import {
   FaHeart,
   FaStar,
   FaMotorcycle,
+  FaCreditCard,
+  FaUsersCog,
 } from "react-icons/fa";
 
 import { MdToys } from "react-icons/md";
@@ -33,6 +35,28 @@ export const ourCategoriesData: IAccount[] = [
   { icon: FaElementor, text: "Electronics" },
   { icon: FaElementor, text: "Spare Parts" },
   { icon: MdToys, text: "Automobile" },
+];
+
+export const profileLinkData: IAccount[] = [
+  {
+    id: 1,
+    icon: FaFirstOrder,
+    text: "Orders",
+    active: true,
+  },
+  {
+    id: 2,
+    icon: FaCreditCard,
+    text: "payments",
+    active: false,
+  },
+  {
+    id: 3,
+    icon: FaHeart,
+    text: "Items",
+    active: false,
+  },
+  { id: 4, icon: FaUsersCog, text: "Settings", active: false },
 ];
 
 interface IData {

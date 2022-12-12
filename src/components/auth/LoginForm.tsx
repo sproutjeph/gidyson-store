@@ -31,8 +31,7 @@ const LoginForm = ({ setIsLoading }: { setIsLoading: any }) => {
     setIsLoading(true);
     try {
       await signIn("google", {
-        callbackUrl:
-          (process.env.NEXTAUTH_URL as string) || "http://localhost:3000",
+        callbackUrl: "https://gidyson-store.vercel.app/",
       });
     } catch (error) {
       console.log(error);
@@ -43,8 +42,7 @@ const LoginForm = ({ setIsLoading }: { setIsLoading: any }) => {
     setIsLoading(true);
     try {
       await signIn("facebook", {
-        callbackUrl:
-          (process.env.NEXTAUTH_URL as string) || "http://localhost:3000",
+        callbackUrl: "https://gidyson-store.vercel.app/",
       });
     } catch (error) {
       setIsLoading(false);
