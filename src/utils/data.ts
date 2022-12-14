@@ -1,6 +1,4 @@
-import bcrypt from "bcryptjs";
 import { images } from "../constants";
-
 import {
   FaAirbnb,
   FaElementor,
@@ -17,46 +15,51 @@ import { MdToys } from "react-icons/md";
 import { IAccount, IProduct } from "./types";
 
 export const myAccountData: IAccount[] = [
-  { icon: FaFirstOrder, text: "Orders" },
-  { icon: FaEnvelope, text: "Inbox" },
-  { icon: FaAirbnb, text: "Pending Orders" },
-  { icon: FaAirbnb, text: "Gidyson Coupon" },
-  { icon: FaHeart, text: "Saved Items" },
+  { Icon: FaFirstOrder, text: "Orders" },
+  { Icon: FaEnvelope, text: "Inbox" },
+  { Icon: FaAirbnb, text: "Pending Orders" },
+  { Icon: FaAirbnb, text: "Gidyson Coupon" },
+  { Icon: FaHeart, text: "Saved Items" },
 ];
 export const ourServicesData: IAccount[] = [
-  { icon: FaStar, text: "Gidyson Prime" },
-  { icon: FaStar, text: "Pay For Way Bill" },
-  { icon: FaStar, text: "Pay For Loading" },
+  { Icon: FaStar, text: "Gidyson Prime" },
+  { Icon: FaStar, text: "Pay For Way Bill" },
+  { Icon: FaStar, text: "Pay For Loading" },
 ];
 export const ourCategoriesData: IAccount[] = [
-  { icon: FaFirstOrder, text: "Trycycles" },
-  { icon: FaMotorcycle, text: "Motocycle" },
-  { icon: FaAirbnb, text: "Phone & Tablet " },
-  { icon: FaElementor, text: "Electronics" },
-  { icon: FaElementor, text: "Spare Parts" },
-  { icon: MdToys, text: "Automobile" },
+  { Icon: FaFirstOrder, text: "Trycycles" },
+  { Icon: FaMotorcycle, text: "Motocycle" },
+  { Icon: FaAirbnb, text: "Phone & Tablet " },
+  { Icon: FaElementor, text: "Electronics" },
+  { Icon: FaElementor, text: "Spare Parts" },
+  { Icon: MdToys, text: "Automobile" },
 ];
 
 export const profileLinkData: IAccount[] = [
   {
     id: 1,
-    icon: FaFirstOrder,
+    Icon: FaFirstOrder,
     text: "Orders",
     active: true,
   },
   {
     id: 2,
-    icon: FaCreditCard,
+    Icon: FaCreditCard,
     text: "payments",
     active: false,
   },
   {
     id: 3,
-    icon: FaHeart,
+    Icon: FaHeart,
     text: "Items",
     active: false,
   },
-  { id: 4, icon: FaUsersCog, text: "Settings", active: false },
+  {
+    id: 4,
+    Icon: FaUsersCog,
+    text: "Settings",
+    active: false,
+  },
 ];
 
 interface IData {

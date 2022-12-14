@@ -7,7 +7,7 @@ export interface PageMeta {
 }
 
 export interface IAccount {
-  icon: IconType;
+  Icon: IconType;
   text: string;
   id?: number;
   active?: boolean;

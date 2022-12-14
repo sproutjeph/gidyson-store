@@ -1,16 +1,16 @@
-import Link from "next/link";
-import React, { useState } from "react";
 import {
   myAccountData,
   ourCategoriesData,
   ourServicesData,
 } from "../../utils/data";
-import { FaTimes } from "react-icons/fa";
-import GidysonLogo from "../gidysonLogo";
-import SidebarItem from "./SidebarItem";
 import { MdChevronRight, MdOutlineCommentBank } from "react-icons/md";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { closeSidebar } from "../../featuers/sidebar/sidebarSlice";
+import React, { useState } from "react";
+import { FaTimes } from "react-icons/fa";
+import GidysonLogo from "../gidysonLogo";
+import SidebarItem from "./SidebarItem";
+import Link from "next/link";
 
 const Sidebar = () => {
   const dispatch = useAppDispatch();
@@ -54,7 +54,7 @@ const Sidebar = () => {
           </Link>
           <ul className="flex flex-col gap-8 mt-4 ml-4">
             {myAccountData.map((item, i) => (
-              <SidebarItem Icon={item.icon} text={item.text} key={i} />
+              <SidebarItem Icon={item.Icon} text={item.text} key={i} />
             ))}
           </ul>
         </div>
@@ -71,7 +71,7 @@ const Sidebar = () => {
           </Link>
           <ul className="flex flex-col gap-8 mt-4 ml-4">
             {ourCategoriesData.map((item, i) => (
-              <SidebarItem Icon={item.icon} text={item.text} key={i} />
+              <SidebarItem Icon={item.Icon} text={item.text} key={i} />
             ))}
           </ul>
         </div>
@@ -88,7 +88,7 @@ const Sidebar = () => {
           </Link>
           <ul className="flex flex-col gap-8 mt-4 ml-4">
             {ourServicesData.map((item, i) => (
-              <SidebarItem Icon={item.icon} text={item.text} key={i} />
+              <SidebarItem Icon={item.Icon} text={item.text} key={i} />
             ))}
           </ul>
         </div>

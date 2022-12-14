@@ -31,7 +31,7 @@ const LoginForm = ({ setIsLoading }: { setIsLoading: any }) => {
     setIsLoading(true);
     try {
       await signIn("google", {
-        callbackUrl: "https://gidyson-store.vercel.app/",
+        callbackUrl: "http://localhost:3000/",
       });
     } catch (error) {
       console.log(error);
