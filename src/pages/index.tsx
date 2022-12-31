@@ -1,11 +1,10 @@
-import { useEffect } from "react";
-import { useAppSelector } from "../store/hooks";
-import { useAppDispatch } from "../store/hooks";
-import { Sidebar, Portal, Overlay, Banner, ProductFeeds } from "../components";
 import { calculateTotals } from "../featuers/cart/cartSlice";
+import { Banner, ProductFeeds } from "../components";
+import { useAppDispatch } from "../store/hooks";
+import { useEffect } from "react";
+
 export default function GidysonStore() {
   const dispatch = useAppDispatch();
-  const { isSidebarOpen } = useAppSelector((state) => state.sidebar);
 
   useEffect(() => {
     dispatch(calculateTotals());
@@ -15,11 +14,6 @@ export default function GidysonStore() {
     <div className="">
       <Banner />
       <ProductFeeds />
-
-      {/* <Portal> 
-        <Sidebar />
-        {isSidebarOpen ? <Overlay /> : null}
-      </Portal> */}
     </div>
   );
 }

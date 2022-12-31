@@ -33,29 +33,31 @@ const ProductDetails = ({ id }: IProps) => {
   }
   return (
     <>
-      <h1 className="text-xl font-bold tracking-widest">Product Details</h1>
-      <h1 className="text-sm text-gray-300 uppercase my-4 tracking-widest">
+      <h1 className="pt-4 text-xl font-bold tracking-widest">
+        Product Details
+      </h1>
+      <h1 className="my-4 text-sm tracking-widest text-gray-400 uppercase">
         {product.title}
       </h1>
       <main className="p-4 md:p-0 w-[90%] grid md:grid-cols-2 gap-x-10 justify-center">
-        <div className=" mx-auto ">
+        <div className="mx-auto">
           <Image
             src={product?.img!}
             width={500}
             height={500}
             alt="photo of product"
-            className="object-contain rounded-md w-full "
+            className="object-contain w-full rounded-md "
             loading="lazy"
           />
         </div>
 
         <div className="">
-          <div className="w-fit my-4 text-red-600 uppercase text-sm tracking-wider font-bold">
-            <h4 className="py-1 px-3  bg-red-100  rounded-md mb-4">In stock</h4>
+          <div className="my-4 text-sm font-bold tracking-wider text-red-600 uppercase w-fit">
+            <h4 className="px-3 py-1 mb-4 bg-red-100 rounded-md">In stock</h4>
             <h4>sale</h4>
           </div>
 
-          <div className="uppercase font-bold tracking-widest border-b-2 border-dotted pb-2">
+          <div className="pb-2 font-bold tracking-widest uppercase border-b-2 border-dotted">
             <h4>{product?.title}</h4>
             <div className="flex gap-1 my-3">
               {Array(product?.rating)
@@ -76,15 +78,15 @@ const ProductDetails = ({ id }: IProps) => {
             </div>
             <div className="flex justify-between my-4">
               <h4>Modal</h4>
-              <select name="" id="" className="rounded-md py-1">
+              <select name="" id="" className="py-1 rounded-md">
                 <option value="">CB110</option>
                 <option value="">CB125</option>
               </select>
             </div>
 
-            <div className="mt-8 flex justify-between border-b-2 pb-4">
+            <div className="flex justify-between pb-4 mt-8 border-b-2">
               <h4>Quantity</h4>
-              <div className="flex items-center gap-3 border-2 py-1 px-4 rounded-md">
+              <div className="flex items-center gap-3 px-4 py-1 border-2 rounded-md">
                 <FaMinus
                   className="cursor-pointer"
                   onClick={() => {

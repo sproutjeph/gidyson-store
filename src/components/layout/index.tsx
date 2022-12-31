@@ -25,7 +25,7 @@ const Layout = ({ children, meta: pageMeta }: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <main className="max-w-6xl mx-auto mb-10 mt-28">{children}</main>
+      <main className="px-4 mx-auto mb-10 max-w-7xl mt-28">{children}</main>
 
       <Footer />
       <Portal>

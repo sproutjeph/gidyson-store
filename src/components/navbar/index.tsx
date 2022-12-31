@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 z-30 w-full bg-white shadow-sm">
-        <div className="relative flex items-center justify-between max-w-6xl p-4 mx-auto md:py-6 md:px-0">
+        <div className="relative flex items-center justify-between p-4 mx-auto max-w-7xl md:py-6">
           <ul className="flex items-center gap-4">
             <FaBars
               className="text-xl cursor-pointer md:text-2xl"
